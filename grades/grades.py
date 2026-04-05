@@ -15,8 +15,18 @@ print()
 print("[green]Sum per student:[/green]")
 student = student_grade.sum(axis=1)
 print(student.to_string())
-
 print()
+
 print("[green]Mean per student grades:[/green]")
 student = student_grade.mean(axis=1)
 print(student.to_string())
+print()
+
+top_student = student.idxmax()
+top_mean = student.max()
+print(f"[bold green]Highest performing student: [/bold green]\n[bright_cyan]{top_student}[/bright_cyan][bold green] with a grade of[/bold green] [bright_cyan] {top_mean:.2f}[/bright_cyan]")
+print()
+
+bottom_student = student.idxmin()
+bottom_mean = student.min()
+print(f"[bold green]Lowest performing student: [/bold green]\n[bright_cyan]{bottom_student}[/bright_cyan][bold green] with a grade of[/bold green] [bright_cyan] {bottom_mean:.2f}[/bright_cyan]")
